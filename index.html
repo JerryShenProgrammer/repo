@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Jerry Shen的第一个网页</title>
+</head>
+
+
+<body style="font-family: 宋体; font-family: 'Comic Sans MS';">
+<!--这是第一个标签（Tab）-->
+<div>
+    <h2 style="text-align: center;">
+        Jerry Shen's First Website
+    </h2>
+    <h4 style="text-align: center;">
+        (:这是申昊林的第一个网页:)
+    </h4>
+    <p style="text-align: center;">
+        <span style="font-size: 40px;">申昊林————Jerry Shen</span>
+        <span>
+            是一只可爱的小企鹅，也叫Cherry Shen(女版名字):-)
+        </span>
+    </p>
+    <img src="jerry.jpg" style="width:200px;height: 200px; margin-left: 330px;">
+    <span style="font-size: 250px; margin-left: 130px;">:)</span>
+    <img src="jerry2.jpg" style="width:200px;height: 200px; margin-left: 150px;">
+</div>
+<hr>
+<!--这是另一个标签（Tab）-->
+<div>
+    <h2 style="text-align: center;">这是Jerry Shen 的计算器</h2>
+    <p style="text-align: center;">
+        <span style="font-size: 25px;">加法   </span>
+        <span>第一个数：</span>
+        <input type="text" id="input_0">
+        <span> + 第二个数：</span>
+        <input type="text" id="input_1">
+        <button id="button_jia">=</button>
+        <input type="text" id="jia_0">
+    </p>
+    <p style="text-align: center;">
+        <span style="font-size: 25px;">减法   </span>
+        <span>第一个数：</span>
+        <input type="text" id="input_2">
+        <span> - 第二个数：</span>
+        <input type="text" id="input_3">
+        <button id="button_jian">=</button>
+        <input type="text" id="jian_0">
+    </p>
+    <p style="text-align: center;">
+        <span style="font-size: 25px;">乘法   </span>
+        <span>第一个数：</span>
+        <input type="text" id="input_4">
+        <span> * 第二个数：</span>
+        <input type="text" id="input_5">
+        <button id="button_cheng">=</button>
+        <input type="text" id="cheng_0">
+    </p>
+    <p style="text-align: center;">
+        <span style="font-size: 25px;">除法   </span>
+        <span>第一个数：</span>
+        <input type="text" id="input_6">
+        <span> / 第二个数：</span>
+        <input type="text" id="input_7">
+        <button id="button_chu">=</button>
+        <input type="text" id="chu_0">
+    </p>
+</div>
+<hr>
+
+<div style="text-align: center;">
+    <h2 style="text-align: center;">GAME------猜数小游戏------TIME</h2>
+    <p style="text-align: center;">#玩法说明：请先点击“开始游戏”（否则无法运行），输入您猜的数字后(0-9)点击“确定”进行判断。Tip:您有三次猜数机会哦~#</p>
+    <button id="btn_start" style="text-align: center; width: 150px;height: 40px">开始游戏^_^</button>
+    <br>
+    <input id="input_number" type="number" style="width: 150px;height: 50px">
+    <br/>
+    <button id="btn_okboygirltimeforfunchina">确定</button>
+    <br/>
+    &nbsp;
+    <br/>
+    <p id="p_result" style="font-size: 30px;">??????</p>
+</div>
+<script type="application/javascript">
+    console.log("这是我的website——by Jerry Shen_Thanks YK!");
+    alert("感谢您访问Jerry Shen的网页！")
+
+    var button_jia = document.getElementById("button_jia");
+    var button_jian = document.getElementById("button_jian");
+    var button_cheng = document.getElementById("button_cheng");
+    var button_chu = document.getElementById("button_chu");
+    var input_0 = document.getElementById("input_0");
+    var input_1 = document.getElementById("input_1");
+    var input_2 = document.getElementById("input_2");
+    var input_3 = document.getElementById("input_3");
+    var input_4 = document.getElementById("input_4");
+    var input_5 = document.getElementById("input_5");
+    var input_6 = document.getElementById("input_6");
+    var input_7 = document.getElementById("input_7");
+    var jia_0 = document.getElementById("jia_0");
+    var jian_0 = document.getElementById("jian_0");
+    var cheng_0 = document.getElementById("cheng_0");
+    var chu_0 = document.getElementById("chu_0");
+
+    button_jia.onclick = function (ev) {
+        var result_0 = parseFloat(input_0.value) + parseFloat(input_1.value);
+        jia_0.value = result_0;
+    };
+    button_jian.onclick = function (ev) {
+        var result_1 = parseFloat(input_2.value) - parseFloat(input_3.value);
+        jian_0.value = result_1;
+    };
+    button_cheng.onclick = function (ev) {
+        var result_2 = parseFloat(input_4.value) * parseFloat(input_5.value);
+        cheng_0.value = result_2;
+    };
+    button_chu.onclick = function (ev) {
+        var result_3 = parseFloat(input_6.value) / parseFloat(input_7.value);
+        chu_0.value = result_3;
+    };
+
+    var btn_start = document.getElementById("btn_start");
+    var input_number = document.getElementById("input_number");
+    var btn_okboygirltimeforfunchina = document.getElementById("btn_okboygirltimeforfunchina");
+    var p_result = document.getElementById("p_result");
+
+    btn_start.onclick = function () {
+
+        input_number.value = '';
+
+        p_result.innerText = '??????';
+
+        var my_index = 1;
+
+        var realnumber = parseInt(Math.random() * 10)
+
+        var guessnumber;
+
+        btn_okboygirltimeforfunchina.onclick = function (ev) {
+            guessnumber = input_number.value;
+            if (realnumber == guessnumber) {
+                p_result.innerText = "您竟然猜对了！！！OMG！"
+            } else {
+                if (my_index % 3 == 0) {
+                    p_result.innerText = "很可惜，这个数字是：" + realnumber;
+                } else {
+                    p_result.innerText = "猜错了，再试一次"
+                    my_index++;
+                }
+
+            }
+        }
+    };
+</script>
+</body>
+
+
+</html>
