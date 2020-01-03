@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都**必须**跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/icon.jpg">
+
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <title>Jerry Shen的第一个网页</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/offcanvas.css" rel="stylesheet">
+
+    <script src="js/handsontable.full.min.js"></script>
+    <link rel="stylesheet" href="css/handsontable.full.min.css" type="text/css"/>
+
+    <script src="js/math.js" charset="utf-8"></script>
+
+
+</head>
+
+<body style="padding-top:50px;">
+<nav class="navbar navbar-fixed-top navbar-inverse" style="padding-top: 0px;">
+
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!--矢量图标-->
+            <svg t="1542379931426" class="icon" style="margin-top: 10px;" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg"
+                 p-id="1734" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30">
+                <defs>
+                    <style type="text/css"></style>
+                </defs>
+                <path d="M512 0.288L66.976 258.368v511.744L512 1023.776l445.024-258.08V253.952L512 0.288z m204.704 729.824l-40.064 22.24-40.064-22.24v-178.016h-249.184v178.016l-40.096 22.24-40.032-22.24V293.984l40.064-22.24 40.064 22.24v178.016h249.184V293.984l40.096-22.24 40.032 22.24v436.128z"
+                      fill="#ffffff" p-id="1735"></path>
+            </svg>
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#"></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li style="color: white; text-align: center;margin-top: 13px;font-size: 18px;"> &nbsp;&nbsp; Jerry
+                    Shen's First Website &nbsp; &nbsp;
+                </li>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a href="index.html">关于我</a></li>
+                <li><a href="cacu.html">计算器</a></li>
+                <li class="active"><a href="guessnumber.html">猜数小游戏</a></li>
+            </ul>
+        </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+</nav><!-- /.navbar -->
+<div class="container">
+
+    <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+            <p class="pull-right visible-xs">
+                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+            </p>
+            <div class="jumbotron" style="margin-bottom: 0px; text-align: left; ">
+
+                <div style="text-align: center;">
+                    <h2 style="text-align: center;">GAME------猜数小游戏------TIME</h2>
+                    <p style="text-align: center;">#玩法说明：请先点击“开始游戏”（否则无法运行），输入您猜的数字后(0-9)点击“确定”进行判断。Tip:您有三次猜数机会哦~#</p>
+                    <button id="btn_start" style="text-align: center; width: 150px;height: 40px">开始游戏^_^</button>
+                    <br>
+                    <input id="input_number" type="number" style="width: 150px;height: 50px">
+                    <br/>
+                    <button id="btn_okboygirltimeforfunchina">确定</button>
+                    <br/>
+                    &nbsp;
+                    <br/>
+                    <p id="p_result" style="font-size: 30px;">??????</p>
+                </div>
+                <script type="application/javascript">
+                    console.log("这是我的website——by Jerry Shen_Thanks YK!");
+
+                    var btn_start = document.getElementById("btn_start");
+                    var input_number = document.getElementById("input_number");
+                    var btn_okboygirltimeforfunchina = document.getElementById("btn_okboygirltimeforfunchina");
+                    var p_result = document.getElementById("p_result");
+
+                    btn_start.onclick = function () {
+
+                        input_number.value = '';
+
+                        p_result.innerText = '??????';
+
+                        var my_index = 1;
+
+                        var realnumber = parseInt(Math.random() * 10)
+
+                        var guessnumber;
+
+                        btn_okboygirltimeforfunchina.onclick = function (ev) {
+                            guessnumber = input_number.value;
+                            if (realnumber == guessnumber) {
+                                p_result.innerText = "您竟然猜对了！！！OMG！"
+                            } else {
+                                if (my_index % 3 == 0) {
+                                    p_result.innerText = "很可惜，这个数字是：" + realnumber;
+                                } else {
+                                    p_result.innerText = "猜错了，再试一次"
+                                    my_index++;
+                                }
+
+                            }
+                        }
+                    };
+                </script>
+
+            </div>
+
+        </div><!--/.col-xs-12.col-sm-9-->
+
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+            <div class="list-group">
+                <a href="#" class="list-group-item">Google search</a>
+                <a href="#" class="list-group-item">I'm feeling lucky</a>
+                <a href="#" class="list-group-item">Facebook</a>
+            </div>
+        </div><!--/.sidebar-offcanvas-->
+    </div><!--/row-->
+
+    <hr>
+
+    <footer>
+        <p>© 2020 Jerry Shen Programmer Copyright</p>
+    </footer>
+
+</div><!--/.container-->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
+<script src="js/bootstrap.js"></script>
+
+<script src="js/offcanvas.js"></script>
+
+
+</body>
+</html>
