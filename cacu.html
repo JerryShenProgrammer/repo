@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都**必须**跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/icon.jpg">
+
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <title>Jerry Shen的第一个网页</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/offcanvas.css" rel="stylesheet">
+
+    <script src="js/handsontable.full.min.js"></script>
+    <link rel="stylesheet" href="css/handsontable.full.min.css" type="text/css"/>
+
+    <script src="js/math.js" charset="utf-8"></script>
+
+    <style type="text/css">
+        input {
+            width: 60px;
+        }
+    </style>
+</head>
+
+<body style="padding-top:50px;">
+<nav class="navbar navbar-fixed-top navbar-inverse" style="padding-top: 0px;">
+
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!--矢量图标-->
+            <svg t="1542379931426" class="icon" style="margin-top: 10px;" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg"
+                 p-id="1734" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30">
+                <defs>
+                    <style type="text/css"></style>
+                </defs>
+                <path d="M512 0.288L66.976 258.368v511.744L512 1023.776l445.024-258.08V253.952L512 0.288z m204.704 729.824l-40.064 22.24-40.064-22.24v-178.016h-249.184v178.016l-40.096 22.24-40.032-22.24V293.984l40.064-22.24 40.064 22.24v178.016h249.184V293.984l40.096-22.24 40.032 22.24v436.128z"
+                      fill="#ffffff" p-id="1735"></path>
+            </svg>
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#"></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li style="color: white; text-align: center;margin-top: 13px;font-size: 18px;"> &nbsp;&nbsp; Jerry
+                    Shen's First Website &nbsp; &nbsp;
+                </li>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a href="index.html">关于我</a></li>
+                <li class="active"><a href="cacu.html">计算器</a></li>
+                <li><a href="guessnumber.html">猜数小游戏</a></li>
+            </ul>
+        </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+</nav><!-- /.navbar -->
+<div class="container">
+
+    <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+            <p class="pull-right visible-xs">
+                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+            </p>
+            <div class="jumbotron" style="margin-bottom: 0px; text-align: left; ">
+
+                <h2 style="text-align: center;">这是Jerry Shen 的计算器</h2>
+                <p style="text-align: center;">
+                    <span style="font-size: 25px;">加法   </span>
+                    <span>第一个数：</span>
+                    <input type="text" id="input_0">
+                    <span> + 第二个数：</span>
+                    <input type="text" id="input_1">
+                    <button id="button_jia">=</button>
+                    <input type="text" id="jia_0">
+                </p>
+                <p style="text-align: center;">
+                    <span style="font-size: 25px;">减法   </span>
+                    <span>第一个数：</span>
+                    <input type="text" id="input_2">
+                    <span> - 第二个数：</span>
+                    <input type="text" id="input_3">
+                    <button id="button_jian">=</button>
+                    <input type="text" id="jian_0">
+                </p>
+                <p style="text-align: center;">
+                    <span style="font-size: 25px;">乘法   </span>
+                    <span>第一个数：</span>
+                    <input type="text" id="input_4">
+                    <span> * 第二个数：</span>
+                    <input type="text" id="input_5">
+                    <button id="button_cheng">=</button>
+                    <input type="text" id="cheng_0">
+                </p>
+                <p style="text-align: center;">
+                    <span style="font-size: 25px;">除法   </span>
+                    <span>第一个数：</span>
+                    <input type="text" id="input_6">
+                    <span> / 第二个数：</span>
+                    <input type="text" id="input_7">
+                    <button id="button_chu">=</button>
+                    <input type="text" id="chu_0">
+                </p>
+
+                <script type="application/javascript">
+                    console.log("这是我的website——by Jerry Shen_Thanks YK!");
+
+                    var button_jia = document.getElementById("button_jia");
+                    var button_jian = document.getElementById("button_jian");
+                    var button_cheng = document.getElementById("button_cheng");
+                    var button_chu = document.getElementById("button_chu");
+                    var input_0 = document.getElementById("input_0");
+                    var input_1 = document.getElementById("input_1");
+                    var input_2 = document.getElementById("input_2");
+                    var input_3 = document.getElementById("input_3");
+                    var input_4 = document.getElementById("input_4");
+                    var input_5 = document.getElementById("input_5");
+                    var input_6 = document.getElementById("input_6");
+                    var input_7 = document.getElementById("input_7");
+                    var jia_0 = document.getElementById("jia_0");
+                    var jian_0 = document.getElementById("jian_0");
+                    var cheng_0 = document.getElementById("cheng_0");
+                    var chu_0 = document.getElementById("chu_0");
+
+                    button_jia.onclick = function (ev) {
+                        var result_0 = parseFloat(input_0.value) + parseFloat(input_1.value);
+                        jia_0.value = result_0;
+                    };
+                    button_jian.onclick = function (ev) {
+                        var result_1 = parseFloat(input_2.value) - parseFloat(input_3.value);
+                        jian_0.value = result_1;
+                    };
+                    button_cheng.onclick = function (ev) {
+                        var result_2 = parseFloat(input_4.value) * parseFloat(input_5.value);
+                        cheng_0.value = result_2;
+                    };
+                    button_chu.onclick = function (ev) {
+                        var result_3 = parseFloat(input_6.value) / parseFloat(input_7.value);
+                        chu_0.value = result_3;
+                    };
+
+                </script>
+            </div>
+
+        </div><!--/.col-xs-12.col-sm-9-->
+
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+            <div class="list-group">
+                <a href="#" class="list-group-item">Google search</a>
+                <a href="#" class="list-group-item">I'm feeling lucky</a>
+                <a href="#" class="list-group-item">Facebook</a>
+            </div>
+        </div><!--/.sidebar-offcanvas-->
+    </div><!--/row-->
+
+    <hr>
+
+    <footer>
+        <p>© 2020 Jerry Shen Programmer Copyright</p>
+    </footer>
+
+</div><!--/.container-->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
+<script src="js/bootstrap.js"></script>
+
+<script src="js/offcanvas.js"></script>
+
+
+</body>
+</html>
