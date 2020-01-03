@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都**必须**跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="img/icon.jpg">
@@ -74,9 +74,9 @@
                     Shen's First Website &nbsp; &nbsp;
                 </li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <li class="active"><a href="index_bak.html">关于我</a></li>
-                <li><a href="division.html">计算器</a></li>
-                <li><a href="inverse.html">猜数小游戏</a></li>
+                <li class="active"><a href="index.html">关于我</a></li>
+                <li><a href="cacu.html">计算器</a></li>
+                <li><a href="guessnumber.html">猜数小游戏</a></li>
             </ul>
         </div><!-- /.nav-collapse -->
     </div><!-- /.container -->
@@ -112,104 +112,12 @@
 
         </div><!--/.col-xs-12.col-sm-9-->
 
-        <!--表格的js-->
-        <script type="application/javascript">
-            //初始化数据
-            const data = [
-                [0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0]
-            ];
-            //选项卡1--计算点积-----------------------------------------
-            //点击按钮生成表格
-            var but_shape_1 = document.getElementById("but_shape_1");
-            but_shape_1.onclick = showTableFromShape_1;
-            //定义矩阵行列数
-            var input_rowNum_1_a = document.getElementById("input_rowNum_1_a");
-            var input_colNum_1_a = document.getElementById("input_colNum_1_a");
-            var input_rowNum_1_b = document.getElementById("input_rowNum_1_b");
-            var input_colNum_1_b = document.getElementById("input_colNum_1_b");
-            const myTable_1_a = document.getElementById('myTable_1_a');
-            const ht_1_a = new Handsontable(myTable_1_a, {
-                data: data,
-                rowHeaders: true,
-                colHeaders: function (index) {
-                    return index + 1;
-                },
-                licenseKey: 'non-commercial-and-evaluation'
-            });
-            const myTable_1_b = document.getElementById('myTable_1_b');
-            const ht_1_b = new Handsontable(myTable_1_b, {
-                data: data,
-                rowHeaders: true,
-                colHeaders: function (index) {
-                    return index + 1;
-                },
-                licenseKey: 'non-commercial-and-evaluation'
-            });
-            const myTable_1_r = document.getElementById('myTable_1_r');
-            const ht_1_r = new Handsontable(myTable_1_r, {
-                data: data,
-                rowHeaders: true,
-                colHeaders: function (index) {
-                    return index + 1;
-                },
-                licenseKey: 'non-commercial-and-evaluation'
-            });
-
-            function showTableFromShape_1() {
-                var rowNum_1_a = input_rowNum_1_a.value;
-                var colNum_1_a = input_colNum_1_a.value;
-                var rowNum_1_b = input_rowNum_1_b.value;
-                var colNum_1_b = input_colNum_1_b.value;
-                var data_1_a = new Array();
-                for (var k = 0; k < rowNum_1_a; k++) {
-                    data_1_a[k] = new Array();
-                    for (var j = 0; j < colNum_1_a; j++) {
-                        data_1_a[k][j] = 0;
-                    }
-                }
-                var data_1_b = new Array();
-                for (var q = 0; q < rowNum_1_b; q++) {
-                    data_1_b[q] = new Array();
-                    for (var t = 0; t < colNum_1_b; t++) {
-                        data_1_b[q][t] = 0;
-                    }
-                }
-                ht_1_a.updateSettings({
-                    data: data_1_a
-                });
-                ht_1_b.updateSettings({
-                    data: data_1_b
-                });
-            }
-
-            //点击按钮计算显示结果
-            var but_result_1 = document.getElementById("but_result_1");
-            but_result_1.onclick = getResult_1;
-
-            function getResult_1() {
-                //从表格中取数据
-                var data_1_a = ht_1_a.getData();
-                var data_1_b = ht_1_b.getData();
-                var data_1_r = math.multiply(data_1_a, data_1_b);
-                console.log(data_1_r);
-                ht_1_r.updateSettings({
-                    data: data_1_r
-                });
-            }
-
-            //结束选项卡1--计算点积==============================================
-        </script>
-
 
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
             <div class="list-group">
-                <a href="#" class="list-group-item">Todo</a>
-                <a href="#" class="list-group-item">Todo</a>
-                <a href="#" class="list-group-item">Todo</a>
+                <a href="#" class="list-group-item">Google search</a>
+                <a href="#" class="list-group-item">I'm feeling lucky</a>
+                <a href="#" class="list-group-item">Facebook</a>
             </div>
         </div><!--/.sidebar-offcanvas-->
     </div><!--/row-->
